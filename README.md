@@ -31,7 +31,7 @@ api.checks(function(err, checks) {
 });
 ```
 
-Currently the API provides access just to checks and results associated to them. In case you need something else, either [poke me with an issue](https://github.com/bebraw/pingdom-api/issues) or create a pull request.
+Currently the API provides access just read-only access to Pingdom's API. In case you need something else, either [poke me with an issue](https://github.com/bebraw/pingdom-api/issues) or create a pull request.
 
 ## License
 
