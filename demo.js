@@ -10,10 +10,28 @@ function main() {
     var api = pingdom(config);
 
     api.checks(function(err, checks) {
+        var id;
+
         if(err) return console.error(err);
 
-        getPerformanceSummary(api, checks[0].id);
+        id = checks[0].id;
+
+        getResults(api, id)
+        getPerformanceSummary(api, id);
     });
+}
+
+function getResults(api, check) {
+    api.results(function(err, data, res) {
+        if(err) return console.error(err);
+
+        console.log('results', data, res.headers);
+    }, {
+        target: check,
+        qs: {
+            limit: 10
+        }
+    })
 }
 
 function getPerformanceSummary(api, check) {
@@ -23,7 +41,7 @@ function getPerformanceSummary(api, check) {
     api['summary.performance'](function(err, data, res) {
         if(err) return console.error(err);
 
-        console.log(data, res.headers);
+        console.log('performance summary', data, res.headers);
     }, {
         target: check,
         qs: {
