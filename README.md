@@ -10,7 +10,7 @@ var credentials = {
     pass: 'updatethis', // based on your user account
     appkey: 'updatethis' // generated per app via web interface
 }
-var api = pingdom();
+var api = pingdom(credentials);
 
 api.checks(function(err, checks) {
     if(err) return console.error(err);
