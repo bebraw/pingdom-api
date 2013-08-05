@@ -33,6 +33,10 @@ api.checks(function(err, checks) {
 
 Currently the API provides access just read-only access to Pingdom's API. In case you need something else, either [poke me with an issue](https://github.com/bebraw/pingdom-api/issues) or create a pull request.
 
+## Contributors
+
+* [rwky](https://github.com/rwky) - Handling of irregular parts of the API
+
 ## License
 
 `pingdom-api` is available under MIT. See LICENSE for more details.
