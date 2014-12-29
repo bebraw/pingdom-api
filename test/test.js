@@ -2,7 +2,8 @@ var should = require('should');
 var pingdom = require('../lib/pingdom')({
   user: 'testUser',
   pass: 'testPass',
-  appkey: 'testAppKey'
+  appkey: 'testAppKey',
+  request: require('./mocks/request')()
 });
 
 describe('Pingdom', function() {
@@ -14,17 +15,37 @@ describe('Pingdom', function() {
       pingdom.should.have.property('checks');
     });
 
-    it('should work with callback', function(done) {
-      pingdom.analysis(function(err, data) {
+    it('should return an error (callback)', function(done) {
+      pingdom.analysis({
+        errorTest: true
+      }, function(err, data) {
         should.exist(err);
+        err.statuscode.should.equal(403);
+        err.errormessage.should.equal('Test Message');
         done();
       });
     });
 
-    it('should work with promises', function(done) {
-      pingdom.analysis()
-        .catch(function(e) {
-          should.exist(e);
+    it('should return an error (promise)', function(done) {
+      pingdom.analysis({
+          errorTest: true
+        })
+        .catch(function(err) {
+          should.exist(err);
+          err.statuscode.should.equal(403);
+          err.errormessage.should.equal('Test Message');
+          done();
+        });
+    });
+
+    it('should return successfully', function(done) {
+      pingdom.analysis({
+          successTest: true
+        })
+        .spread(function(body, response) {
+          should.exist(body);
+          body.sample.should.equal('body');
+          JSON.parse(response).sample.should.equal('response');
           done();
         });
     });
@@ -39,16 +60,24 @@ describe('Pingdom', function() {
     });
 
     it('should work with callback', function(done) {
-      pingdom.getAnalysis(function(err, data) {
+      pingdom.getAnalysis({
+        errorTest: true
+      }, function(err, data) {
         should.exist(err);
+        err.statuscode.should.equal(403);
+        err.errormessage.should.equal('Test Message');
         done();
       });
     });
 
     it('should work with promises', function(done) {
-      pingdom.getAnalysis()
-        .catch(function(e) {
-          should.exist(e);
+      pingdom.getAnalysis({
+          successTest: true
+        })
+        .spread(function(body, response) {
+          should.exist(body);
+          body.sample.should.equal('body');
+          JSON.parse(response).sample.should.equal('response');
           done();
         });
     });
@@ -61,16 +90,24 @@ describe('Pingdom', function() {
     });
 
     it('should work with callback', function(done) {
-      pingdom.setChecks(function(err, data) {
+      pingdom.setChecks({
+        errorTest: true
+      }, function(err, data) {
         should.exist(err);
+        err.statuscode.should.equal(403);
+        err.errormessage.should.equal('No free checks available');
         done();
       });
     });
 
     it('should work with promises', function(done) {
-      pingdom.setChecks()
-        .catch(function(e) {
-          should.exist(e);
+      pingdom.setChecks({
+          successTest: true
+        })
+        .spread(function(body, response) {
+          should.exist(body);
+          body.id.should.equal(138631);
+          body.name.should.equal('My new HTTP check');
           done();
         });
     });
