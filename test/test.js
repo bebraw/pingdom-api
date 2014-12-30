@@ -16,13 +16,13 @@ describe('Pingdom', function() {
     });
 
     it('should return an error (callback)', function(done) {
-      pingdom.analysis({
-        errorTest: true
-      }, function(err, data) {
+      pingdom.analysis(function(err, data) {
         should.exist(err);
         err.statuscode.should.equal(403);
         err.errormessage.should.equal('Test Message');
         done();
+      }, {
+        errorTest: true
       });
     });
 
