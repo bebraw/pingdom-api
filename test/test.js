@@ -87,6 +87,9 @@ describe('Pingdom', function() {
   describe('Set', function() {
     it('should contain set functions', function() {
       pingdom.should.have.property('setChecks');
+      pingdom.should.have.property('setContacts');
+      pingdom.should.have.property('setReportsEmail');
+      pingdom.should.have.property('setReportsShared');
     });
 
     it('should work with callback', function(done) {
