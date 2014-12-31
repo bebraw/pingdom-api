@@ -5,6 +5,7 @@
   "version": "0.4.0",
   "dependencies": {
     "annozip": "^0.2.4",
+    "bluebird": "^2.5.3",
     "request": "2.21.0"
   },
   "scripts": {
