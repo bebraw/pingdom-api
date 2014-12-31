@@ -4,11 +4,15 @@
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.4.0",
   "dependencies": {
-    "request": "2.21.0",
-    "funkit": "0.7.7"
+    "annozip": "^0.2.4",
+    "request": "2.21.0"
+  },
+  "scripts": {
+    "test": "mocha --ui tdd --reporter spec --timeout 10000 test"
   },
   "devDependencies": {
-    "date-utils": "1.2.12"
+    "date-utils": "1.2.12",
+    "should": "^4.4.1"
   },
   "main": "./lib/pingdom.js",
   "repository": {
