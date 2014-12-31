@@ -36,6 +36,7 @@ Currently the API provides access just read-only access to Pingdom's API. In cas
 ## Contributors
 
 * [rwky](https://github.com/rwky) - Handling of irregular parts of the API
+* [Kevin Moritz](https://github.com/ecorkevin) - Massive improvements (promise-based API, basic tests, cleanup)
 
 ## License
 
