@@ -2,7 +2,7 @@
   "name": "pingdom-api",
   "description": "Pingdom API client",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "dependencies": {
     "annozip": "^0.2.4",
     "bluebird": "^2.5.3",
