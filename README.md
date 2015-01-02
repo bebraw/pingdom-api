@@ -23,7 +23,7 @@ All of the GET endpoints can be accessed using methods which have the following 
 
 getChecks (where Checks is the name of the endpoint reference).  If there is a "." in the original reference name, it becomes camelCase.  For example, getSummaryPerformance();
 
-#### All endpoint methods are callback/promise compatible.  To pass querystring options (per the pingdom API), simply add an object called "qs" with the necessary options.  If the endpoint calls for a parameter, pass this in using the "target" field in options.
+> All endpoint methods are callback/promise compatible.  To pass querystring options (per the pingdom API), simply add an object called "qs" with the necessary options.  If the endpoint calls for a parameter, pass this in using the "target" field in options.
 
 Example:
 
