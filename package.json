@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "date-utils": "1.2.12",
+    "mocha": "^2.2.1",
     "should": "^4.4.1"
   },
   "main": "./lib/pingdom.js",
