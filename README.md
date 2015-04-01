@@ -52,6 +52,10 @@ pingdomApi.getChecks()
 
 All of the POST endpoints can be accessed using methods which follow the same syntax as the aforementioned GET methods.
 
+### update\[resourceName\]\(options, \[callback\]\);
+
+All of the PUT endpoints can be accessed using methods which follow the same syntax as the aforementioned GET methods.
+
 ---
 ### LEGACY DOCS (STILL WORK)
 Consider the example below:
