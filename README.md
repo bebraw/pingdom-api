@@ -41,7 +41,7 @@ or
 ```js
 pingdomApi.getChecks()
 .spread(function(checks, response){
-  console.log(checks, response); 
+  console.log(checks, response);
 })
 .catch(function(e){
   console.log(e);
@@ -55,6 +55,10 @@ All of the POST endpoints can be accessed using methods which follow the same sy
 ### update\[resourceName\]\(options, \[callback\]\);
 
 All of the PUT endpoints can be accessed using methods which follow the same syntax as the aforementioned GET methods.
+
+### remove\[resourceName\]\(options, \[callback\]\);
+
+All of the DELETE endpoints can be accessed using methods which follow the same syntax as the aforementioned GET methods.
 
 ---
 ### LEGACY DOCS (STILL WORK)
