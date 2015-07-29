@@ -100,6 +100,7 @@ Currently the API provides access just read-only access to Pingdom's API. In cas
 * [rwky](https://github.com/rwky) - Handling of irregular parts of the API
 * [Kevin Moritz](https://github.com/ecorkevin) - Massive improvements (promise-based API, basic tests, cleanup)
 * [Leonhardt Wille](https://github.com/lwille) - PUT for update calls
+* [Sean Soper](https://github.com/ssoper) - Fixed `remove` API
 
 ## License
 
